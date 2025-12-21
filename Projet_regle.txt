@@ -1,0 +1,10 @@
+Projet doit contenir :
+Requirements
+Architecture
+Modèles (Simulink, Simscape, Stateflow, HMI)
+Validation
+Domaines possibles :
+Elevator
+Water dispenser
+Aileron
+Landing gear

@@ -1,0 +1,43 @@
+Enveloppe / dimensions : 
+
+Le système doit permettre de déplacer le point de tracé dans une zone rectangulaire correspondant approximativement à une feuille (par exemple au moins 200 mm × 200 mm).
+
+Les axes X et Y ne doivent jamais sortir de la zone de dessin définie (limites physiques).
+
+Cinématique (vitesse / accélération)
+
+Chaque axe (X et Y) doit pouvoir atteindre une vitesse de déplacement suffisante pour tracer une forme simple (par exemple un carré de 100 mm de côté) en un temps raisonnable (quelques secondes).
+
+Les vitesses et accélérations doivent être limitées pour éviter les dépassements de consigne trop brutaux (limitation de la commande, saturations).
+
+Commande / supervision (Stateflow) : 
+
+Le système doit disposer d’un bouton ON/OFF (virtuel, géré dans Stateflow ou l’HMI) qui active ou désactive la machine.
+
+Lorsque le système est sur OFF, aucun mouvement des axes ne doit être commandé.
+
+Le fonctionnement doit être organisé en plusieurs modes au minimum : Idle (repos), Drawing (tracé), Error (erreur / arrêt).
+
+Un événement Start doit permettre de passer de Idle à Drawing.
+
+Un événement Stop ou une condition d’erreur doit permettre de passer à Error ou à un état d’arrêt sécurisé.
+
+HMI / interaction utilisateur : 
+
+L’utilisateur doit pouvoir sélectionner au moins une forme à tracer (par exemple : segment, carré).
+
+L’utilisateur doit pouvoir lancer et arrêter un tracé via l’interface.
+
+L’utilisateur doit pouvoir voir l’état du système (Idle, en cours de tracé, erreur / stop).
+
+Sécurité basique : 
+
+Le système ne doit pas commander un mouvement au-delà des limites X et Y définies (protection par saturations / logique).
+
+Un arrêt d’urgence virtuel (bouton ou signal) doit permettre de stopper immédiatement le tracé et les commandes moteurs.
+
+Performance minimale :
+
+Le système doit être capable de terminer le tracé d’un carré de 100 mm × 100 mm dans un temps maximum fixé (par exemple 10 secondes).
+
+Le suivi de position doit être suffisamment bon pour que la forme soit reconnaissable et géométriquement cohérente (on pourra, si on veut, formaliser plus tard une erreur max en position).
