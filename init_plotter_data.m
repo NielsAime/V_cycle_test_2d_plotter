@@ -27,3 +27,10 @@ SYS_A_MAX = 500;
 % Parameters for validation tests
 TEST_SQUARE_SIZE = 100; % mm
 TEST_TIME_LIMIT  = 10.0; % s
+
+%% 4. Motor Parameters (DC Motor Model)
+MOT_R = 2.0;    % Resistance (Ohms)
+MOT_L = 0.5;    % Inductance (Henry)
+MOT_K = 0.1;    % Torque/Back-EMF Constant (N.m/A or V/(rad/s))
+MOT_J = 0.01;   % Rotor Inertia (kg.m^2)
+MOT_B = 0.001;  % Viscous Friction (N.m.s)

@@ -1,0 +1,15 @@
+ID,Summary,"Description (""The system shall..."")",Rationale / Trace
+REQ-SYS-PHY-001,Workspace Dimensions,The system shall provide a usable workspace of at least 200 mm on the X-axis and 200 mm on the Y-axis.,Standard paper size coverage.
+REQ-SYS-PHY-002,Boundary Protection,"The controller shall never command a position outside the range [0, 200] mm for both axes.",Mechanical protection against hard stops.
+,,,
+REQ-SYS-FUN-001,ON/OFF Input,"The system shall accept a binary input signal ""System_ON"".",User Interface. 3
+REQ-SYS-FUN-002,OFF Behavior,"If the ""System_ON"" signal is FALSE, the commanded velocity for both axes shall be forced to 0.",Safety when disabled. 4
+REQ-SYS-FUN-003,Operating Modes,"The system shall implement a state machine containing at least the following states: Idle, Drawing, and Error.",Mode management. 5
+REQ-SYS-FUN-004,Start Transition,"A transition from Idle to Drawing shall occur upon reception of the ""Evt_Start"" event.",Triggering a plot. 6
+REQ-SYS-FUN-005,Shape Generation,"In the Drawing mode, the system shall generate X(t) and Y(t) trajectories corresponding to the selected shape (Segment or Square).",Basic plotting capability. 7
+,,,
+,,,
+REQ-SYS-SAF-001,Emergency Stop,"Activation of the ""Emergency_Stop"" signal shall trigger an immediate transition to the Error state and stop all motor commands.",Operator safety. 8888
+,,,
+REQ-SYS-PERF-001,Cycle Time,The system shall complete the tracing of a 100 x 100 mm square in less than 10 seconds.,Productivity metric. 9999
+REQ-SYS-PERF-002,Dynamic Limiting,The commanded acceleration shall not exceed 500 mm/s² to prevent actuator saturation.,Prevents brutal overshoots. 10
